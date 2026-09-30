@@ -1,4 +1,4 @@
-import requests
+import requests # type: ignore
 
 def get_real_weather(city):
     url = f"https://wttr.in/{city}?format=j1&lang=ko"
@@ -32,7 +32,7 @@ def get_real_weather(city):
         response = requests.get(url)
         
         if response.status_code != 200:
-            print(f"❌ '{city}' 도시를 찾을 수 없거나 서버 통신에 실패했습니다. 영문(예: Seoul, London)으로 다시 시도해보세요.")
+            print(f"❌ '{city}' 도시를 찾을 수 없거나 서버 통신에 실패했습니다. 영문(예: Seoul, London)으로 다시 시도해보거나 다른 도시를 입력해주세요.")
             return
 
         data = response.json()
@@ -78,7 +78,6 @@ def get_real_weather(city):
         print("프로그램 실행 중 오류가 발생했습니다:", e)
 
 if __name__ == "__main__":
-    city_input = input("일기예보를 확인할 도시 이름을 입력하세요 (예: 서울, 천안, Busan): ")
+    city_input = input("일기예보를 확인할 도시 이름을 입력하세요 (예: 서울, 천안, 부산): ")
     get_real_weather(city_input)
-    #https://github.com/huboisbingsin/python-weather.git
-    
+    #https://github.com/huboisbingsin/python-weather.git    
