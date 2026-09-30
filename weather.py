@@ -75,7 +75,7 @@ def get_real_weather(city):
             print("-" * 35)
 
     except Exception as e:
-        print("프로그램 실행 중 오류가 발생했습니다:", e)
+        print("프로그램 실행 중 오류가 발생했습니다 다시 시도해주세요:", e)
 
 if __name__ == "__main__":
     city_input = input("일기예보를 확인할 도시 이름을 입력하세요 (예: 서울, 천안, 부산): ")
